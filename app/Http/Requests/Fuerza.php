@@ -24,8 +24,15 @@ class Fuerza extends FormRequest
     public function rules()
     {
         return [
-            'name' => '',
-        'lastname' => 'required'
+            'name' => 'required'
         ];
     }
+
+  
+
+
+
+
+
 }
+

@@ -30,17 +30,29 @@ private $path ='user';
 
 
 
-	public function add(Fuerza $request){
-		//donde adiciono los registros
-		  $validated = $request->validated();
+	public function pendejo(Fuerza $request){
+
+
+
 		$crud = new Teste;
-		$crud->name = $request->nam;
-		$crud->lastname = $request->sobrenome;
-		$crud->age = $request->idade;
+		$crud->name = $request->get('name');
+		$crud->lastname = $request->get('sobrenome');
+		$crud->age = $request->get('idade');
+		$crud->save();
 		
+		
+		   
+		return redirect('/crud')->with('masage','Usuario Cadastrado');
+
+/*
+		$crud = Teste::find($id);
+		$crud->name = $request->get('name');
+		$crud->lastname = $request->get('sobrnome');
+		$crud->age = $request->get('idade');
 		$crud->save();
 
-		return redirect('/crud')->with('masage','Usuario Cadastrado');
+         return redirect('/crud')->with('masage','Actualizado com exito');*/
+
 
 	}
 
@@ -55,7 +67,7 @@ private $path ='user';
 
 
 
-	public function update(Request $request, $id){
+	public function update(Fuerza $request, $id){
 		$crud = Teste::find($id);
 		$crud->name = $request->get('name');
 		$crud->lastname = $request->get('sobrnome');

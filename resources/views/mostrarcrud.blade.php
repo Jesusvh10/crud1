@@ -11,7 +11,7 @@
 		{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{{ csrf_token() }}"/>
 			<label>Nome</label>
-			<input type="text" name="nam">
+			<input type="text" name="name">
 			<label>Sobrenome</label>
 			<input type="text" name="sobrenome">
 			<label>Idade</label>

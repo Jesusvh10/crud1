@@ -21,7 +21,7 @@ Route::get('cadastro','Crud1Controller@cadastro');
 Route::get('/editcrud/{id}','Crud1Controller@editt');
 
 //Rotas de processo
-Route::post('addcrud','Crud1Controller@add');
+Route::post('addcrud','Crud1Controller@pendejo');
 Route::put('upcrud/{id}','Crud1Controller@update');
 Route::delete('/delcrud/{id}','Crud1Controller@delete');
 
