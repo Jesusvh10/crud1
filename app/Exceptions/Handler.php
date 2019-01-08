@@ -30,7 +30,7 @@ class Handler extends ExceptionHandler
      * Report or log an exception.
      *
      * @param  \Exception  $exception
-     * @return void
+     * @return voidd
      */
     public function report(Exception $exception)
     {
@@ -46,6 +46,13 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof \Illuminate\Auth\AunthenticaqtionException) {
+
+            return redirect('/')->with('flash','Por favor inicia sesion');
+            # code...
+        }
+
+
         return parent::render($request, $exception);
     }
 }

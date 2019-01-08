@@ -10,7 +10,20 @@ use App\Http\Requests\Fuerza;
 //use App\Http\Controllers\Controller;
 
 class Crud1Controller extends Controller
+
+
+
 {
+
+
+public function __construct(){
+
+	$this->middleware('auth');
+
+}
+
+
+
     //
 private $path ='user';
 

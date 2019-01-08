@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
+Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+//Route::get('crud',)
+
 //rotas de visualização
-Route::get('crud','Crud1Controller@show');
+Route::get('crud','Crud1Controller@show')->name('crud');
 Route::get('cadastro','Crud1Controller@cadastro');
 Route::get('/editcrud/{id}','Crud1Controller@editt');
 
@@ -29,3 +34,7 @@ Route::delete('/delcrud/{id}','Crud1Controller@delete');
 
 
 //id	name	lastname	age	created_at	updated_at
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
