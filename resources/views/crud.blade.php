@@ -10,18 +10,20 @@
 
  <div class="conteiner my-4" >
    
+
+  <form method="POST" action="{{route('logout')}}">
+    {{csrf_field() }}
+    <button class="btn btn-danger btn-xs float-right ">Cerrar sesión</button>
+
+  </form>
+  <br>
+
    <h1 class="display-4">Registro</h1><br>
-   <h1 class="panel-title">Bienvenido  {{auth()->user()->name}}</h1>
+   <h6  class="panel-title">Bienvenido  {{auth()->user()->name}}</h6>
 
  </div>
 
  <div class="panel-body">
-  
-  <form method="POST" action="{{route('logout')}}">
-    {{csrf_field() }}
-    <button class="btn btn-danger btn-xs ">Cerrar sesión</button>
-
-  </form>
 
 
  </div>
@@ -61,6 +63,6 @@
           @endforeach()
         </tbody>
   </table>
-    }
+    
 
 @endsection

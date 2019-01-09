@@ -11,17 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
-Route::post('login', 'Auth\LoginController@login')->name('login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Auth::routes();
+
+Route::get('/crud', 'Crud1Controller@show')->name('show');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+
+/*Route::get('/', function () {
+    return view('auth.login');
+});*/
+
+//Route::get('login', 'Auth\LoginController@viewLogin')->name('loginview');
+
+//Route::post('login', 'Auth\LoginController@login')->name('login');
+
 
 //Route::get('crud',)
 
 //rotas de visualização
-Route::get('crud','Crud1Controller@show')->name('crud');
+//Route::get('crud','Crud1Controller@show')->name('crud');
 Route::get('cadastro','Crud1Controller@cadastro');
 Route::get('/editcrud/{id}','Crud1Controller@editt');
 
@@ -29,6 +44,7 @@ Route::get('/editcrud/{id}','Crud1Controller@editt');
 Route::post('addcrud','Crud1Controller@pendejo');
 Route::put('upcrud/{id}','Crud1Controller@update');
 Route::delete('/delcrud/{id}','Crud1Controller@delete');
+
 
 
 

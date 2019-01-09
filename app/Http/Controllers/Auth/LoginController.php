@@ -1,44 +1,42 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
-
 use App\Http\Controllers\Controller;
-//use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
-use Auth;
-
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller
 {
-    public function login(){
-
-        $credentials = $this->validate(request(), [
-
-            'email' =>  'email|required|string', 'password' => 'required|string'
-
-        ]);
-
-        //return $credentials;
-
-        if(Auth::attempt( $credentials))
-        {
-           // return 'Tu has ingresado correctamente';
-
-            return redirect()->route('crud');
-
-        }
-
-        return back()
-
-        ->withErrors(['email' => 'Estos datos no coinciden con nuestros registros']);
-
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+    use AuthenticatesUsers;
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/crud';
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+    public function username()
+    {
+        $loginType = request()->input('username');
+        $this->username = filter_var($loginType, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        request()->merge([$this->username => $loginType]);
+        return property_exists($this, 'username') ? $this->username : 'email';
     }
 
-    public function logout(){
-
-        Auth::logout();
-
-        return redirect('/');
-
-    }
   
 }
