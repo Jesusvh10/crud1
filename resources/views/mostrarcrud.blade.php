@@ -13,6 +13,10 @@
 =======
 <h2>Aqui estamos haciendo  testes de GIT</h2>
 <h2>Aqui estamos haciendo  testes de GIT</h2>
+<<<<<<< HEAD
+>>>>>>> testes
+=======
+<h3>Aqui estamos haciendo  testes de GIT</h3>
 >>>>>>> testes
 <div class="container" >
 	<div class="row">
