@@ -4,6 +4,7 @@
 
 
 <h1>Este aqui é o formulário de pessoas pronto</h1>
+<h1>Aqui estamos haciendo  testes de GIT</h1>
 <div class="container" >
 	<div class="row">
 		@include('erro')
