@@ -9,6 +9,11 @@
 <h1>Aqui estamos haciendo  testes de GIT</h1>
 <h1>Aqui estamos haciendo  testes de GIT</h1>
 <h1>Aqui estamos haciendo  testes de GIT</h1>
+<<<<<<< HEAD
+=======
+<h2>Aqui estamos haciendo  testes de GIT</h2>
+<h2>Aqui estamos haciendo  testes de GIT</h2>
+>>>>>>> testes
 <div class="container" >
 	<div class="row">
 		@include('erro')
