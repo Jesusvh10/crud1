@@ -39,6 +39,7 @@ private $path ='user';
 	public function cadastro(){
 		//donde yo veo el formulario de cadastro para registrar
 	 	return view('mostrarcrud');
+	 	
 	}
 
 
